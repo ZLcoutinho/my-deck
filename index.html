@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu deck</title>
+    <link rel = "shortcut icon" type = "imagem/x-icon" href ="./image/deck-chair.ico"/>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div><h2>Meu deck</h2></div>
+    </header>
+
+    <form class="search-form">
+        <input type="text" class="search" data-js="search-input" placeholder="Buscar" name="search" id="search">
+        <input type="submit" value="">
+    </form>
+
+    <section data-js="cards-container" class="cards-container"></section><!--cards-container-->
+
+    <section data-js="form-container" class="hidden">
+        <form data-js="card-form">
+            <div data-js="exit" Onclick="exit(event, 'form-container')" class="exit"></div>
+            <div class="part1-form">
+                <label for="name">Nome</label>
+                <input type="text" maxlength="15" required data-js="name-form"  name="name" id="name">
+                <label for="description">Descrição</label>
+                <textarea name="description" id="description" required cols="30" rows="10" data-js="description"></textarea>
+                <label for="type-one">Endereço da imagem</label>
+                <input type="url" required name="image-url" id="image-url" data-js="image-url">
+                <label for="type-one">Tipo 1</label>
+                <input type="text" maxlength="10" required name="type-one" id="type-one" data-js="type-one">
+                <label for="type-two">Tipo 2 (opcional)</label>
+                <input type="text" maxlength="10" name="type-two" id="type-two" data-js="type-two">
+            </div>
+            <div class="part2-form">
+                <label for="attr1">Atributo1:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:hp" name="attr1" id="attr1" data-js="attr1">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr1-points" id="attr1-points" data-js="attr1-points">
+                <br />
+                <label for="attr2">Atributo2:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:ataque" name="attr2" id="attr2" data-js="attr2">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr2-points" id="attr2-points" data-js="attr2-points">
+                <br />
+                <label for="attr3">Atributo3:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:defesa" name="attr3" id="attr3" data-js="attr3">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr3-points" id="attr3-points" data-js="attr3-points">
+                <br />
+                <label for="attr4">Atributo4:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:velocidade" name="attr4" id="attr4" data-js="attr4">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr4-points" id="attr4-points" data-js="attr4-points">
+                <br />
+                <label for="attr5">Atributo5:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:sp.attack" name="attr5" id="attr5" data-js="attr5">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr5-points" id="attr5-points" data-js="attr5-points">
+                <br />
+                <label for="attr6">Atributo6:</label>
+                <input type="text" required class="attr" maxlength="13" minlength="1" placeholder="ex:sp.defense" name="attr6" id="attr6" data-js="attr6">
+                <br />
+                <input type="number" max="9999" min="-9999" required name="attr6-points" id="attr6-points" data-js="attr6-points">
+            </div>
+            <input type="submit" value="enviar" class="btn-submit">
+        </form><!--card-form-->
+    </section><!--form-container-->
+
+    <section data-js="card-info-container" class="hidden"> 
+        <div class="card-info-wrapper">   
+            <div data-js="exit" Onclick="exit(event, 'card-info-container')" class="exit"></div><!--exit-->
+            <div class="image-types-wrapper">
+                <div data-js="image-card-info" class="image-card-info"></div><!--image-card-info-->
+                <div class="types-wrapper">
+                    <div class="lines">
+                        <div class="line"></div><!--line-->
+                        <div class="line"></div><!--line-->
+                    </div><!--lines-->
+                    <div data-js="types" class="types">
+                        <div>
+                            <p data-js="type-one-paragraph"></p>
+                            <p data-js="type-two-paragraph"></p>
+                        </div>
+                    </div><!--types-->
+                    <div class="lines">
+                        <div class="line"></div><!--line-->
+                        <div class="line"></div><!--line-->
+                    </div><!--lines-->
+                </div><!--types-wrapper-->
+            </div><!--image-types-wrapper-->
+            <div class="name-description-stats-wrapper">
+                <div data-js="name-card-info" class="name-card-info">
+                    <p></p>
+                </div><!--name-card-info-->
+                <div class="description-and-stats">
+                    <div class="description-container">
+                        <p data-js="description-paragraph" class="description">
+                            
+                        </p><!--description-->
+                    </div><!--description-container-->
+                    <div class="stats-wrapper">
+                        <div class="attrs-wrapper">
+                            <div class="attr-card-info card-info-attr1">
+                                <p data-js="attr1-name-card-info"></p>
+                                <p data-js="attr1-points-card-info"></p>
+                            </div><!--attr1-->
+                            <div class="attr-card-info card-info-attr2">
+                                <p data-js="attr2-name-card-info"></p>
+                                <p data-js="attr2-points-card-info"></p>
+                            </div><!--attr2-->
+                            <div class="attr-card-info card-info-attr3">
+                                <p data-js="attr3-name-card-info"></p>
+                                <p data-js="attr3-points-card-info"></p>
+                            </div><!--attr3-->
+                            <div class="attr-card-info card-info-attr4">
+                                <p data-js="attr4-name-card-info"></p>
+                                <p data-js="attr4-points-card-info"></p>
+                            </div><!--attr4-->
+                            <div class="attr-card-info card-info-attr5">
+                                <p data-js="attr5-name-card-info"></p>
+                                <p data-js="attr5-points-card-info"></p>
+                            </div><!--attr5-->
+                            <div class="attr-card-info card-info-attr6">
+                                <p data-js="attr6-name-card-info"></p>
+                                <p data-js="attr6-points-card-info"></p>
+                            </div><!--attr6-->
+                        </div><!--attrs-wrapper-->
+                    </div><!--stats-wrapper-->
+                </div><!--description-and-stats-->
+            </div><!--name-description-stats-wrapper-->
+        </div><!--card-info-wrapper-->
+    </section><!--card-info-container-->
+
+    <div data-js="add-card" class="add-card"></div><!--add-card-->
+<script src="./app.js"></script>
+</body>
+</html>
